@@ -21,7 +21,7 @@ type Config struct {
 func TestFile_LoadIniFile(t *testing.T) {
 	t.Log("TestFile_LoadIniFile")
 	var iniConfig Config
-	err := LoadIniFile(&iniConfig, "./config.ini")
+	err := LoadFile(&iniConfig, "./config.ini", Ini)
 	if err != nil {
 		t.Error(err)
 	}
@@ -31,7 +31,7 @@ func TestFile_LoadIniFile(t *testing.T) {
 func TestFile_LoadJsonFile(t *testing.T) {
 	t.Log("TestFile_LoadJsonFile")
 	var jsonConfig Config
-	err := LoadJsonFile(&jsonConfig, "./config.json")
+	err := LoadFile(&jsonConfig, "./config.json", Json)
 	if err != nil {
 		t.Error(err)
 	}
@@ -41,7 +41,7 @@ func TestFile_LoadJsonFile(t *testing.T) {
 func TestFile_LoadYamlFile(t *testing.T) {
 	t.Log("TestFile_LoadYamlFile")
 	var yamlConfig Config
-	err := LoadYamlFile(&yamlConfig, "./config.yaml")
+	err := LoadFile(&yamlConfig, "./config.yaml", Yaml)
 	if err != nil {
 		t.Error(err)
 	}
