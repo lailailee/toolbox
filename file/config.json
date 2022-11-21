@@ -1,0 +1,15 @@
+{
+  "owner": {
+    "name": "lailailee",
+    "organization": "personal"
+  },
+  "database": {
+    "type": "mysql",
+    "server": "192.168.2.226",
+    "port": 3306,
+    "username": "lailailee",
+    "password": "lailailee"
+  }
+}
+
+
