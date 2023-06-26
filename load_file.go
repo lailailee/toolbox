@@ -1,10 +1,11 @@
-package file
+package toolbox
 
 import (
 	"encoding/json"
+	"io/ioutil"
+
 	"gopkg.in/ini.v1"
 	"gopkg.in/yaml.v3"
-	"io/ioutil"
 )
 
 const (

@@ -1,7 +1,9 @@
-package file
+package test
 
 import (
 	"testing"
+
+	"github.com/lailailee/toolbox"
 )
 
 type Config struct {
@@ -21,9 +23,10 @@ type Config struct {
 func TestFile_LoadIniFile(t *testing.T) {
 	t.Log("TestFile_LoadIniFile")
 	var iniConfig Config
-	err := LoadFile(&iniConfig, "./config.ini", Ini)
+	err := toolbox.LoadFile(&iniConfig, "./config.ini", toolbox.Ini)
 	if err != nil {
 		t.Error(err)
+		return
 	}
 	t.Logf("%#v", iniConfig)
 }
@@ -31,9 +34,10 @@ func TestFile_LoadIniFile(t *testing.T) {
 func TestFile_LoadJsonFile(t *testing.T) {
 	t.Log("TestFile_LoadJsonFile")
 	var jsonConfig Config
-	err := LoadFile(&jsonConfig, "./config.json", Json)
+	err := toolbox.LoadFile(&jsonConfig, "./config.json", toolbox.Json)
 	if err != nil {
 		t.Error(err)
+		return
 	}
 	t.Logf("%#v", jsonConfig)
 }
@@ -41,9 +45,10 @@ func TestFile_LoadJsonFile(t *testing.T) {
 func TestFile_LoadYamlFile(t *testing.T) {
 	t.Log("TestFile_LoadYamlFile")
 	var yamlConfig Config
-	err := LoadFile(&yamlConfig, "./config.yaml", Yaml)
+	err := toolbox.LoadFile(&yamlConfig, "./config.yaml", toolbox.Yaml)
 	if err != nil {
 		t.Error(err)
+		return
 	}
 	t.Logf("%#v", yamlConfig)
 }
