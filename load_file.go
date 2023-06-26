@@ -8,14 +8,16 @@ import (
 	"gopkg.in/yaml.v3"
 )
 
+type FileType int
+
 const (
-	Ini = iota + 0
-	Json
-	Yaml
+	Ini  FileType = 0
+	Json FileType = 1
+	Yaml FileType = 2
 )
 
 // LoadFile 按类型读取文件
-func LoadFile(config interface{}, file string, fileType int) (err error) {
+func LoadFile(config interface{}, file string, fileType FileType) (err error) {
 	switch fileType {
 	case Ini:
 		err = loadIniFile(config, file)
